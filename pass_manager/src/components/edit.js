@@ -14,7 +14,7 @@ export default function Edit() {
     async function fetchData() {
       const id = params.id.toString();
       const response = await fetch(
-        `https://pass-manager-api.onrender.com/record/${params.id.toString()}`
+        `http://localhost:5000/record/${params.id.toString()}`
       );
 
       if (!response.ok) {
@@ -30,7 +30,12 @@ export default function Edit() {
         return;
       }
 
-      setForm(record);
+      setForm({
+        Site: record[0].Site,
+        Email: record[0].Email,
+        Pass: record[0].Password,
+        Username: record[0].Username,
+      });
     }
 
     fetchData();
@@ -68,34 +73,34 @@ export default function Edit() {
 
   // This following section will display the form that takes input from the user to update the data.
   return (
-    <div>
+    <div className="flex flex-col justify-center m-auto items-center">
       <h3>Update Record</h3>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="flex flex-col gap-3 mt-3">
         <div className="">
-          <label htmlFor="Site">Site:</label>
           <input
+            placeholder="Site"
             type="text"
-            className=""
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Site"
             value={form.Site}
             onChange={(e) => updateForm({ Site: e.target.value })}
           />
         </div>
         <div className="">
-          <label htmlFor="Email">Email</label>
           <input
+            placeholder="Email"
             type="Email"
-            className=""
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Email"
             value={form.Email}
             onChange={(e) => updateForm({ Email: e.target.value })}
           />
         </div>
         <div className="">
-          <label htmlFor="Username">Username:</label>
           <input
+            placeholder="Username"
             type="text"
-            className=""
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Username"
             value={form.Username}
             onChange={(e) => updateForm({ Username: e.target.value })}
@@ -103,17 +108,21 @@ export default function Edit() {
         </div>
 
         <div className="">
-          <label htmlFor="Password">Password:</label>
           <input
+            placeholder="Password"
             type="text"
-            className=""
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Password"
             value={form.Pass}
             onChange={(e) => updateForm({ Pass: e.target.value })}
           />
         </div>
-        <div className="">
-          <input type="submit" value="Create person" className="" />
+        <div className="flex justify-center">
+          <input
+            type="submit"
+            value="Update"
+            className="bg-black text-white px-4 py-2 rounded-md"
+          />
         </div>
       </form>
     </div>

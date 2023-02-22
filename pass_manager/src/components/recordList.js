@@ -6,7 +6,7 @@ const Record = (props) => (
   <div className="flex">
     <div className="flex flex-wrap justify-center items-center gap-x-5 ">
       <CopyToClipboard text={props.record.Site}>
-        <span className="font-bold text-i text-indigo-800 ">
+        <span className="font-bold text-i text-indigo-800 capitalize">
           {props.record.Site}
         </span>
       </CopyToClipboard>

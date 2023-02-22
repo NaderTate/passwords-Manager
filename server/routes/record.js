@@ -23,11 +23,18 @@ recordRoutes.route("/record").get(async function (req, response) {
 });
 
 // This section will help you get a single record by id
-recordRoutes.route("/record/:id").get(function (req, res) {
+recordRoutes.route("/record/:id").get(async function (req, res) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: new ObjectId(req.params.id) };
-  const result = db_connect.collection("records").findOne(myquery);
-  res.json(result);
+  try {
+    let myquery = { _id: new ObjectId(req.params.id) };
+    var records = await db_connect
+      .collection("records")
+      .find(myquery)
+      .toArray();
+    res.json(records);
+  } catch (e) {
+    console.log("An error occurred pulling the records. " + e);
+  }
 });
 
 // This section will help you create a new record.

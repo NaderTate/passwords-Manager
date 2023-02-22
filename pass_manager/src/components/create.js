@@ -84,7 +84,7 @@ export default function Create() {
             onChange={(e) => updateForm({ Pass: e.target.value })}
           />
         </div>
-        <div className=" flex justify-center">
+        <div className="flex justify-center">
           <input
             type="submit"
             value="Add"
