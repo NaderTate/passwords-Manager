@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <div>
-      <nav className="flex justify-between mx-10 my-3">
+      <nav className="flex justify-between px-10 bg-blue-600/90 py-3 w-screen fixed top-0">
         <NavLink to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 text-white"
           >
             <path
               strokeLinecap="round"
@@ -34,7 +34,7 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 text-white"
           >
             <path
               strokeLinecap="round"
