@@ -89,7 +89,7 @@ export default function Edit() {
         <div className="">
           <input
             placeholder="Email"
-            type="Email"
+            type="text"
             className="w-52 md:w-96 border rounded-md border-md"
             id="Email"
             value={form.Email}
