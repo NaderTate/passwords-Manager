@@ -11,7 +11,7 @@ const Record = (props) => (
         </span>
       </CopyToClipboard>
       <CopyToClipboard text={props.record.Email}>
-        <span className="text-red-500 font-black tracking-wider hover:bg-black/50 rounded-md px-3 hover:text-white">
+        <span className="text-red-500 font-black tracking-wider hover:bg-black/50 rounded-md px-3 hover:text-white  w-[70vw] overflow-hidden">
           {props.record.Email}
         </span>
       </CopyToClipboard>
