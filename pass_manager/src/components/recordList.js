@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -71,7 +71,19 @@ const Record = (props) => (
 
 export default function RecordList() {
   const [records, setRecords] = useState([]);
-
+  const email = "nadertate@gmail.com";
+  const password = "escapethematrix";
+  const [isLogged, setIsLogged] = useState(false);
+  const emailref = useRef(null);
+  const passref = useRef(null);
+  const submit = () => {
+    if (
+      emailref.current.value === email &&
+      passref.current.value === password
+    ) {
+      setIsLogged(true);
+    }
+  };
   // This method fetches the records from the database.
   useEffect(() => {
     async function getRecords() {
@@ -125,5 +137,35 @@ export default function RecordList() {
   }
 
   // This following section will display the table with the records of individuals.
-  return <div>{recordList()}</div>;
+  return (
+    <div>
+      {isLogged ? (
+        recordList()
+      ) : (
+        <div className="mt-10 w-screen h-screen flex flex-col items-center justify-center">
+          <form action="" className="flex flex-col gap-3">
+            <input
+              type="text"
+              ref={emailref}
+              placeholder="email"
+              className="w-52 md:w-96 border rounded-md border-md h-10"
+            />
+            <input
+              type="password"
+              ref={passref}
+              placeholder="pass"
+              className="w-52 md:w-96 border rounded-md border-md h-10"
+            />
+            <button
+              type="submit"
+              onClick={submit}
+              className="bg-black text-white px-4 py-2 rounded-md"
+            >
+              Enter
+            </button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
 }
