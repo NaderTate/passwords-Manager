@@ -142,10 +142,10 @@ export default function RecordList() {
       {isLogged ? (
         recordList()
       ) : (
-        <div className="mt-10 w-screen h-screen flex flex-col items-center justify-center">
+        <div className="mt-10 w-[90vw] h-[90vh] flex flex-col items-center justify-center">
           <form action="" className="flex flex-col gap-3">
             <input
-              type="text"
+              type="email"
               ref={emailref}
               placeholder="email"
               className="w-52 md:w-96 border rounded-md border-md h-10"
