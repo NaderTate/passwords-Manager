@@ -6,22 +6,22 @@ const Record = (props) => (
   <div className="flex ">
     <div className="flex flex-wrap justify-center items-center gap-x-5 ">
       <CopyToClipboard text={props.record.Site}>
-        <span className="font-bold text-i text-indigo-800 capitalize">
+        <span className="font-bold text-i text-indigo-800 capitalize text-center">
           {props.record.Site}
         </span>
       </CopyToClipboard>
       <CopyToClipboard text={props.record.Email}>
-        <span className="text-red-500 font-black tracking-wider hover:bg-black/50 rounded-md px-3 hover:text-white sm:w-auto w-[70vw] overflow-hidden">
+        <span className="text-red-500 font-black tracking-wider hover:bg-black/50 rounded-md px-3 hover:text-white sm:w-auto w-[70vw] overflow-hidden text-center">
           {props.record.Email}
         </span>
       </CopyToClipboard>
       <CopyToClipboard text={props.record.Username}>
-        <span className="hover:bg-black/50 rounded-md px-3 hover:text-white">
+        <span className="hover:bg-black/50 rounded-md px-3 hover:text-white text-center">
           {props.record.Username}
         </span>
       </CopyToClipboard>
       <CopyToClipboard text={props.record.Password}>
-        <span className="text-green-500 font-black tracking-wider hover:bg-black/50 rounded-md px-3 hover:text-white sm:w-auto w-[70vw] overflow-hidden">
+        <span className="text-green-500 font-black tracking-wider hover:bg-black/50 rounded-md px-3 hover:text-white sm:w-auto w-[70vw] overflow-hidden text-center">
           {props.record.Password}
         </span>
       </CopyToClipboard>
