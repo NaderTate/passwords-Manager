@@ -114,6 +114,7 @@ export default function RecordList() {
             deleteRecord={() => deleteRecord(record._id)}
             key={record._id}
           />
+          <div className="bg-black w-screen h-[1px]"></div>
         </div>
       );
     });
