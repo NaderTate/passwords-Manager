@@ -40,7 +40,7 @@ export default function Create() {
 
   // This following section will display the form that takes the input from the user.
   return (
-    <div className="flex flex-col justify-center m-auto items-center">
+    <div className="flex flex-col justify-center items-center mt-16">
       <h3>Create New</h3>
       <form onSubmit={onSubmit} className="flex flex-col gap-3 mt-3">
         <div className="">
