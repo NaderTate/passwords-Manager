@@ -40,34 +40,34 @@ export default function Create() {
 
   // This following section will display the form that takes the input from the user.
   return (
-    <div>
+    <div className="flex flex-col justify-center m-auto items-center">
       <h3>Create New</h3>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="flex flex-col gap-3 mt-3">
         <div className="">
-          <label htmlFor="Site">Site:</label>
           <input
+            placeholder="Site:"
             type="text"
-            className=""
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Site"
             value={form.Site}
             onChange={(e) => updateForm({ Site: e.target.value })}
           />
         </div>
         <div className="">
-          <label htmlFor="Email">Email</label>
           <input
+            placeholder="Email: "
             type="Email"
-            className=""
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Email"
             value={form.Email}
             onChange={(e) => updateForm({ Email: e.target.value })}
           />
         </div>
         <div className="">
-          <label htmlFor="Username">Username:</label>
           <input
+            placeholder="Username: "
             type="text"
-            className=""
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Username"
             value={form.Username}
             onChange={(e) => updateForm({ Username: e.target.value })}
@@ -75,17 +75,21 @@ export default function Create() {
         </div>
 
         <div className="">
-          <label htmlFor="Password">Password:</label>
           <input
-            type="password"
-            className=""
+            placeholder="Password"
+            type="text"
+            className="w-52 md:w-96 border rounded-md border-md"
             id="Password"
             value={form.Pass}
             onChange={(e) => updateForm({ Pass: e.target.value })}
           />
         </div>
-        <div className="">
-          <input type="submit" value="Create person" className="" />
+        <div className=" flex justify-center">
+          <input
+            type="submit"
+            value="Create person"
+            className="bg-black text-white px-4 py-2 rounded-md"
+          />
         </div>
       </form>
     </div>

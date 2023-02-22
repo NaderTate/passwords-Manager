@@ -75,7 +75,9 @@ export default function RecordList() {
   // This method fetches the records from the database.
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5000/record/`);
+      const response = await fetch(
+        `https://pass-manager-api.onrender.com/record`
+      );
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
@@ -94,7 +96,7 @@ export default function RecordList() {
 
   // This method will delete a record
   async function deleteRecord(id) {
-    await fetch(`http://localhost:5000/${id}`, {
+    await fetch(`https://pass-manager-api.onrender.com/${id}`, {
       method: "DELETE",
     });
 
@@ -106,11 +108,13 @@ export default function RecordList() {
   function recordList() {
     return records.map((record) => {
       return (
-        <Record
-          record={record}
-          deleteRecord={() => deleteRecord(record._id)}
-          key={record._id}
-        />
+        <div className="flex flex-col items-center">
+          <Record
+            record={record}
+            deleteRecord={() => deleteRecord(record._id)}
+            key={record._id}
+          />
+        </div>
       );
     });
   }
