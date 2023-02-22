@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Record = (props) => (
-  <div className="flex">
+  <div className="flex ">
     <div className="flex flex-wrap justify-center items-center gap-x-5 ">
       <CopyToClipboard text={props.record.Site}>
         <span className="font-bold text-i text-indigo-800 capitalize">
@@ -106,18 +106,22 @@ export default function RecordList() {
 
   // This method will map out the records on the table
   function recordList() {
-    return records.map((record) => {
-      return (
-        <div className="flex flex-col items-center">
-          <Record
-            record={record}
-            deleteRecord={() => deleteRecord(record._id)}
-            key={record._id}
-          />
-          <div className="bg-black w-screen h-[1px]"></div>
-        </div>
-      );
-    });
+    return (
+      <div className="mt-5">
+        {records.map((record) => {
+          return (
+            <div className="flex flex-col items-center">
+              <Record
+                record={record}
+                deleteRecord={() => deleteRecord(record._id)}
+                key={record._id}
+              />
+              <div className="bg-black w-screen h-[1px]"></div>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 
   // This following section will display the table with the records of individuals.
