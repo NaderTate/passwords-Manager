@@ -87,7 +87,7 @@ export default function Create() {
         <div className=" flex justify-center">
           <input
             type="submit"
-            value="Create person"
+            value="Add"
             className="bg-black text-white px-4 py-2 rounded-md"
           />
         </div>
