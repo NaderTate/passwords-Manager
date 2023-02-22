@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <div>
-      <nav className="flex justify-between px-10 bg-blue-600/90 py-3 w-screen fixed top-0">
+      <nav className="flex justify-between px-10 bg-blue-600/90 py-1 w-screen fixed top-0">
         <NavLink to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
